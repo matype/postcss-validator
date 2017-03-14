@@ -10,7 +10,20 @@
     "type": "git",
     "url": "git://github.com/morishitter/postcss-validator/git"
   },
-  "keywords": ["css","postcss","postcss-plugin","validator"],
+  "keywords": [
+    "css",
+    "postcss",
+    "postcss-plugin",
+    "validator"
+  ],
   "author": "Masaaki Morishita",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "known-css-properties": "0.0.7",
+    "postcss": "^5.2.16"
+  }
 }
