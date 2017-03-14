@@ -1,0 +1,16 @@
+{
+  "name": "postcss-validator",
+  "version": "0.0.0",
+  "description": "PostCSS plugin to check if an input string is valid CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/morishitter/postcss-validator/git"
+  },
+  "keywords": ["css","postcss","postcss-plugin","validator"],
+  "author": "Masaaki Morishita",
+  "license": "MIT"
+}
