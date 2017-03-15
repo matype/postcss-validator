@@ -3,11 +3,21 @@ var chalk = require('chalk')
 var knownProperties = require('known-css-properties')
 
 module.exports = postcss.plugin('postcss-validator', function (opts) {
-  opts = opts || {}
+  var defaultOpts = {
+    nestedRules: true,
+    unknownProperties: true
+  }
+
+  opts = opts || defaultOpts
 
   return function (root) {
-    checkNestedRules(root)
-    checkUnknownProperties(root)
+    if (opts.nestedRules) {
+      checkNestedRules(root)
+    }
+
+    if (opts.unknownProperties) {
+      checkUnknownProperties(root)
+    }
 
     console.log(chalk.green('SUCCESS to build valid CSS'))
 
