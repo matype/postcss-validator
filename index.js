@@ -20,7 +20,7 @@ module.exports = postcss.plugin('postcss-validator', function (opts) {
 })
 
 function error () {
-  console.log(chalk.red('Built to invalid CSS'))
+  console.error(chalk.red('Built to invalid CSS'))
 }
 
 function checkNestedRules (root) {
