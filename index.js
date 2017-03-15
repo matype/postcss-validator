@@ -1,13 +1,9 @@
 var postcss = require('postcss')
-var validator = require('csstree-validator')
 var chalk = require('chalk')
 var knownProperties = require('known-css-properties')
 
 module.exports = postcss.plugin('postcss-validator', function (opts) {
   opts = opts || {}
-
-  var validateString = validator.validateString
-  var reporter = validator.reporters.json
 
   return function (root) {
     checkNestedRules(root)
