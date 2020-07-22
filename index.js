@@ -38,6 +38,14 @@ function checkNestedRules (root) {
   })
 }
 
+function first2char (prop) {
+  return prop.slice( 0, 2 );
+}
+
+function isCustomProperty(decl) {
+  return decl.parent.selector === ':root' && first2char(decl.prop) === '--';
+}
+
 function checkUnknownProperties (root) {
   var knownPropertiesMap = {}
   knownProperties.all.forEach(function (knownProperty) {
@@ -45,7 +53,7 @@ function checkUnknownProperties (root) {
   })
 
   root.walkDecls(function (decl) {
-    if (!knownPropertiesMap[decl.prop]) {
+    if (!knownPropertiesMap[decl.prop] && !isCustomProperty(decl)) {
       error()
       throw decl.error('Unknown property [' + decl.prop + '] is used')
     }
